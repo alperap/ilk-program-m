@@ -1,44 +1,40 @@
-isim = input("Lütfen isminizi girin: ")
-print( isim + ", oyunumuza hoşgeldin. Adam asmaca oynama zamanı!")
 
-kelime = "Alper"
-can = 10
+print("Hii, lets begin!")
 
-dolu = ""
+Word = "alperap"
+
+gamer_word=""
+    
+lives = 10
+
+while lives >0 :
+    
+    word_gamer_character = 0
+
+    for word in Word:
+        if word in gamer_word:
+            print(word)
+        else:
+            print("-")
+            word_gamer_character +=1
+
+    if word_gamer_character == 0:
+        print("u won!")
+        break
+
+    entry = input("Enter any character: ")
+
+    if entry in Word:
+        gamer_word += entry
+        print("Nice, u find it")
+        print(f"Your lives: {lives}")
+    elif entry not in Word:
+        print("Was wrong :(")
+        lives -=1
+        print(f"Your lives: {lives}")
+    
+    
 
 
-while can>0 :
-
-	kalan_karakter = 0
 
 
-
-
-
-	for har in kelime:
-		if har in dolu:
-			print(har)
-		elif har not in dolu:
-			print("-")
-			kalan_karakter +=1
-		
-	
-
-	if kalan_karakter==0:
-		print("Kazandınız!")
-		break
-
-
-
-
-
-
-	harf = input("Lütfen bir harf girin: ")
-	dolu += harf
-
-	if harf in kelime:
-		print("Evet, çok iyi!")
-	elif harf not in kelime:
-		print("Yanlış harf!")
-		can -=1
-		print(f"{can} adet canın kaldı.")
